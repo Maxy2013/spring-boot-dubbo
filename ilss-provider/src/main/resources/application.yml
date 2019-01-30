@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ilss-provider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tech_comm?useSSL=false
+    username: root
+    password: feng1104
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+dubbo:
+  registry:
+    protocol: zookeeper
+    address: 127.0.0.1:2181
+    id: registry-1
+  protocol:
+    port: 20888
+    name: dubbo
+    id: dubbo
+    status: server
+  application:
+    name: ilss-provider
+    id: ilss-provider
+  scan:
+    basePackages: io.ilss.dubbo.service.impl
+  provider:
+    version: 1.0
