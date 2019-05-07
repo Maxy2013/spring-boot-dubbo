@@ -7,7 +7,7 @@ dubbo:
     name: ilss-consumer
   registry:
     protocol: zookeeper
-    address: 127.0.0.1:2181
+    address: server-a:2181,server-b:2181,server-c:2181
     id: registry-1
   protocol:
     name: dubbo
